@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Piloto JMC</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./bootstrap-4.3.1-dist/css/bootstrap.css">
+    </head>
+    <body>
+        <div class="container">
+            <ul class="nav nav-pills nav-fill bg-primary">
+                <li class="nav-item">
+                    <a style="color: white" class="nav-link" href="#">Avión</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color: white" class="nav-link" href="#">Mecánico</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color: white" class="nav-link" href="#">Piloto</a>
+                </li>
+            </ul>
+
+
+            <h1 style="text-align: center">PILOTOS</h1>
+            <h3 style="text-align: center">Registro de pilotos</h3>
+
+
+
+            <form action="http://localhost:8080/HotelWeb19/Controladores/HabitacionCtrl" name="habitacionForm" method="post">
+                <div style="width: 60%; margin: 0 auto;">
+                    <label>Nombre </label> 
+                    <input class="form-control" id="tipo" required type="text" maxlength="10" name="nombre"> 
+                    <label>Cédula</label>
+                    <input class="form-control" id="numero" required type="text" maxlength="10" name="cedula">
+                    <label>Años de graduación</label>
+                    <input class="form-control" id="capacidad" required type="number" maxlength="10" name="graduacion">
+                    <label>Tipo de piloto</label>
+                    <input class="form-control" id="capacidad" required type="number" maxlength="10" name="Tipo">
+
+                    <br>
+                    <input class="btn btn-outline-primary" id="boton" name="boton" value="Guardar" type="submit">
+                    <input class="btn btn-outline-success" id="boton" name="boton" value="Buscar" type="submit">
+                    <input class="btn btn-outline-secondary" id="limpiar" value="Limpiar" type="reset">
+
+                </div>
+
+            </form>
+        </div>
+
+        <br><br><br>
+
+
+    </body>
+</html>
+
