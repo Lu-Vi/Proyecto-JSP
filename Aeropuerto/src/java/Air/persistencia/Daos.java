@@ -56,31 +56,6 @@ public class Daos {
         return usuario;
     }
 
-//      
-//     
-//     public List<HabitacionEn>getHabitaciones(Connection con){          
-//            List<HabitacionEn> result = new ArrayList<HabitacionEn>();
-//            try{
-//                PreparedStatement p = con.prepareStatement(SQLHelper.selectHabitaciones());
-//                ResultSet r = p.executeQuery();
-//                    while(r.next()){
-//                        HabitacionEn c = new HabitacionEn();
-//                        c.setNumero(r.getInt(1));
-//                        c.setTipo(r.getString(2));
-//                        c.setPrecio(r.getInt(3));
-//                        result.add(c);
-//                    }
-//                } catch(Exception ex){
-//                    ex.printStackTrace();
-//                }finally{
-//                try{
-//                  con.close();
-//                }catch(Exception clo){}
-//
-//                }
-//            return result;
-//            
-//	}
 //    
 //     public List<TiposEn>getTipos(Connection con){          
 //            List<TiposEn> result = new ArrayList<TiposEn>();
