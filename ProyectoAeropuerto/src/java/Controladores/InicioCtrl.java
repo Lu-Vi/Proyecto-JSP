@@ -35,11 +35,11 @@ public class InicioCtrl extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        Conexion con=new Conexion();
+//        Conexion con=new Conexion();
         UsuarioEn usuarioEn= new UsuarioEn(request.getParameter("user"), request.getParameter("password"));
         UsuarioNg usuarioNg= new UsuarioNg();
         
-        usuarioEn=usuarioNg.buscarUsuario(con.getCon(), usuarioEn);
+//        usuarioEn=usuarioNg.buscarUsuario(con.getCon(), usuarioEn);
         
         if (usuarioEn.getPerfil()!=0){//si existe me conecte ese formulario con el otro
             response.sendRedirect("/ProyectoAeropuerto/Reparaciones.html");
