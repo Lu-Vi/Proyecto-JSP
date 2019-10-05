@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>ZONA DE REPARACIÓN</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./bootstrap-4.3.1-dist/css/bootstrap.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <div class="container">
+
+            <!-- 
+            
+            -->
+
+
+
+
+            <ul class="nav nav-pills nav-fill bg-primary nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a id="avion-tab" data-toggle="tab" href="#avion" role="tab" aria-controls="Avion" aria-selected="true" style="color: white" class="nav-link">Avión</a>
+                </li>
+                <li class="nav-item">
+                    <a id="piloto-tab" data-toggle="tab" href="#piloto" role="tab" aria-controls="Piloto" aria-selected="false" style="color: white" class="nav-link">Piloto</a>
+                </li>
+                <li class="nav-item">
+                    <a id="falla-tab" data-toggle="tab" href="#fallastecnicas" role="tab" aria-controls="FallasTecnicas" aria-selected="false" style="color: white" class="nav-link">Fallas Técnicas</a>
+                </li>
+            </ul>
+
+
+
+            <div class="tab-content" id="myTabContent">
+                <!-- 
+                    aria-labelledby: permite especificar el id de otro elemento perteneciente a la plantilla (atributo  de relación)
+                    id: se coloca el nombre asignado en el aria-controls, ya que este también es un atributo de relación que se enlazará al id asignado
+                -->
+                <div class="tab-pane fade show active m-5" id="avion" role="tabpanel" aria-labelledby="avion-tab">
+
+                    <h1 style="text-align: center">AVIÓN</h1>
+                    <h3 style="text-align: center">Regístro de Aviones</h3>
+                    <form action="http://localhost:8080/ProyectoAeropuerto/Controladores/ReparacionesCtrl" name="avionesForm" method="post">
+                        <div style="width: 60%; margin: 0 auto;">
+                            <label>Matrícula </label> 
+                            <input class="form-control" id="matricula" required type="text" maxlength="7" name="matricula"> 
+                            <label>Marca</label>
+                            <input class="form-control" id="marca" required type="text" maxlength="30" name="marca">
+                            <label>Nit Aerolínea</label>
+                            <input class="form-control" id="nitAerolinea" required type="text" maxlength="30" name="nitAerolinea">
+                            <label>Nombre Aerolínea</label>
+                            <input class="form-control" id="nomAerolinea" required type="text" maxlength="30" name="nomAerolinea">
+                            <br />
+                            <label>Hangar</label>
+                            <select>
+
+                                <option> 1</option>
+                                <option> 2</option>
+                                <option> 3</option>
+                                <option> 4</option>
+                                <option> 5</option>
+                                <option> 6</option>
+                                <option> 7</option>
+                                <option> 8</option>
+                                <option> 9</option>
+                                <option>10</option>
+
+                            </select>
+                            <br />
+                            <br>
+                            <input class="btn btn-outline-primary" id="boton" name="boton" value="Guardar" type="submit">
+                            <input class="btn btn-outline-success" id="boton" name="boton" value="Buscar" type="submit">
+                            <input class="btn btn-outline-secondary" id="limpiar" value="Limpiar" type="reset">
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+                <div class="tab-pane fade m-5" id="piloto" role="tabpanel" aria-labelledby="piloto-tab">
+                    <h1 style="text-align: center">PILOTO</h1>
+                    <h3 style="text-align: center">Regístro de Pilotos</h3>
+                    <form action="http://localhost:8080/ProyectoAeropuerto/Controladores/ReparacionesCtrl" name="pilotosForm" method="post">
+                        <div style="width: 60%; margin: 0 auto;">
+
+                            <label>Cédula:</label>
+                            <input class="form-control" id="cedulaEx" required type="text" maxlength="10" name="cedula">
+                            <label>Nombre:</label>
+                            <input class="form-control" id="nombreExperto" required type="text" maxlength="30" name="nombre">
+                            <label>Año de Graduación:</label>
+                            <input class="form-control" id="anoGraduacionEx" required type="text" maxlength="5" name="anoGraduacion">
+                            <label>Hora de inicio de vuelo:</label>
+                            <input class="form-control" id="HinicioVueloEx" required type="text" maxlength="5" name="HinicioVuelo">
+                            <label>Hora de fin de vuelo:</label>
+                            <input class="form-control" id="HfinVueloEx" required type="text" maxlength="5" name="HfinVuelo">
+                            <br />  
+
+
+                            <label>Escoja Tipo de Piloto:</label>
+                            <select id="tipoPiloto" onchange="Seleccionar(this.value)">
+                                <option> Seleccionar...</option>
+                                <option> Experto</option>
+                                <option> Senior</option>
+                                <option> Junior</option>
+                            </select>
+                            <br />
+                            
+                            <div id="tipoExperto" style="display:none;"><br />
+                                <label>Estado civil:</label>
+                                <input class="form-control" id="estadoCivilPiloto" required type="text" maxlength="30" name="estadoCivil">
+                                <br />
+                            </div>
+
+                            <div id="tipoSenior" style="display:none;"><br />
+                                <label>Número de hijos:</label>
+                                <input class="form-control" id="numeroHijosPiloto" required type="text" maxlength="30" name="numeroHijos">                           
+                                <br />
+                            </div>
+
+                            <div id="tipoJunior" style="display:none;"><br />
+                                <label>Edad:</label>
+                                <input class="form-control" id="edadPiloto" required type="text" maxlength="30" name="edad">
+                                <br />
+                            </div>
+
+
+                            <br>
+                            <input class="btn btn-outline-primary" id="boton" name="boton" value="Guardar" type="submit">
+                            <input class="btn btn-outline-success" id="boton" name="boton" value="Buscar" type="submit">
+                            <input class="btn btn-outline-secondary" id="limpiar" value="Limpiar" type="reset">
+
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="tab-pane fade m-5" id="fallastecnicas" role="tabpanel" aria-labelledby="fallas-tab">
+                    <h1 style="text-align: center">FALLAS TÉCNICAS</h1>
+                    <h3 style="text-align: center">Regístro de Fallas Técnicas</h3>
+                    <form action="http://localhost:8080/ProyectoAeropuerto/Controladores/ReparacionesCtrl" name="fallasForm" method="post">
+                        <div style="width: 60%; margin: 0 auto;">
+                            <label>Matrícula de Avión </label> 
+                            <input class="form-control" id="tipo" required type="text" maxlength="7" name="matricula"> 
+                            <label>Descripción del daño: </label>
+                            <br />
+                            <textarea cols="50" rows="2"></textarea>
+                            <br />
+                            <label>MECÁNICO:</label>
+                            <br />
+                            <label>Cédula:</label>
+                            <input class="form-control" id="cedulaMe" required type="text" maxlength="10" name="cedula">
+                            <label>Nombre:</label>
+                            <input class="form-control" id="nombreMe" required type="text" maxlength="30" name="nombre">
+                            <label>Especialidad</label>
+                            <input class="form-control" id="nombreEspecialidadMec" required type="text" maxlength="30" name="nombreEspecialidad">
+
+                            <br />
+                            <label>Categoría de la especialidad: </label>
+                            <select>
+
+                                <option> A</option>
+                                <option> B</option>
+                                <option> C</option>
+
+                            </select>
+                            <br />
+                            <br>
+                            <input class="btn btn-outline-primary" id="boton" name="boton" value="Guardar" type="submit">
+                            <input class="btn btn-outline-success" id="boton" name="boton" value="Buscar" type="submit">
+                            <input class="btn btn-outline-secondary" id="limpiar" value="Limpiar" type="reset">
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        function Seleccionar(tipoPiloto) {
+            switch (tipoPiloto)
+            {
+                case "Experto":
+                    div = document.getElementById('tipoExperto');
+                    div.style.display = 'block';
+                    div = document.getElementById('tipoSenior');
+                    div.style.display = 'none';
+                    div = document.getElementById('tipoJunior');
+                    div.style.display = 'none';
+                    break;
+                case "Senior":
+                    div = document.getElementById('tipoExperto');
+                    div.style.display = 'none';
+                    div = document.getElementById('tipoSenior');
+                    div.style.display = 'block';
+                    div = document.getElementById('tipoJunior');
+                    div.style.display = 'none';
+                    break;
+                case "Junior":
+                    div = document.getElementById('tipoExperto');
+                    div.style.display = 'none';
+                    div = document.getElementById('tipoSenior');
+                    div.style.display = 'none';
+                    div = document.getElementById('tipoJunior');
+                    div.style.display = 'block';
+                    break;
+                default:
+                    div = document.getElementById('tipoExperto');
+                    div.style.display = 'none';
+                    div = document.getElementById('tipoSenior');
+                    div.style.display = 'none';
+                    div = document.getElementById('tipoJunior');
+                    div.style.display = 'none';
+                    break;
+            }
+        }
+    </script>
+</html>
+

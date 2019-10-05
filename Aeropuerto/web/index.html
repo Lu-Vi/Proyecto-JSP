@@ -21,6 +21,19 @@ and open the template in the editor.
             <!-- 
             
             -->
+            <br />
+            <font color="Navy" font="Courier">
+            <h1 align="left"><i>Aeropuerto Internacional Jose María Córdoba</i></h1>
+            </font>
+            <h2 style="text-align: left">Fallas técnicas</h2>
+
+            <form class="form-inline justify-content-end"  name="registro" action="Controladores/InicioCtrl" method="post">
+                <li class="nav-item">
+
+                    <button class="btn btn-primary btn-lg active" type="submit">Regístrate con nosotros</button>
+                </li>
+                </ul>
+            </form>
 
             <form class="form-inline justify-content-end"  name="inicioForm" action="Controladores/InicioCtrl" method="post">
                 <ul class="nav m-3">
@@ -47,8 +60,10 @@ and open the template in the editor.
                 <li class="nav-item">
                     <a id="servicios-tab" data-toggle="tab" href="#servicios" role="tab" aria-controls="servicios" aria-selected="false" style="color: white" class="nav-link">Servicios</a>
                 </li>
+                <li class="nav-item">
+                    <a id="contactenos-tab" data-toggle="tab" href="#contactenos" role="tab" aria-controls="contactenos" aria-selected="false" style="color: white" class="nav-link">Contáctenos</a>
+                </li>
             </ul>
-
 
 
             <div class="tab-content" id="myTabContent">
@@ -57,23 +72,48 @@ and open the template in the editor.
                     id: se coloca el nombre asignado en el aria-controls, ya que este también es un atributo de relación que se enlazará al id asignado
                 -->
                 <div class="tab-pane fade show active m-5" id="vision" role="tabpanel" aria-labelledby="vision-tab">
+                    <div align="center"> <img src="./img/Avion pasajeros logo.jpg" width="20%" height="20%"> </div>
                     <p>Ser una entidad reconocida como líder internacional con una cartera de concesiones para 
-                       operar, mantener y desarrollar 16 aeropuertos en el continente Americano.</p>
+                        operar, mantener y desarrollar 16 aeropuertos en el continente Americano.</p>
                 </div>
-                
+
                 <div class="tab-pane fade m-5" id="mision" role="tabpanel" aria-labelledby="mision-tab">
+                    <div align="center"> <img src="./img/Avion pasajeros logo.jpg" width="20%" height="20%"> </div>
                     <p>El objetivo de la Empresa es la administración, operación, explotación comercial, adecuación, 
-                       modernización y mantenimiento de las terminales aéreas Olaya Herrera de Medellín, José 
-                       María Córdova de Rionegro, Los Garzones de Montería,  Antonio Roldán Betancur de Carepa, 
-                       El Caraño de Quibdó y Las Brujas de Corozal.</p>
+                        modernización y mantenimiento de las terminales aéreas Olaya Herrera de Medellín, José 
+                        María Córdova de Rionegro, Los Garzones de Montería,  Antonio Roldán Betancur de Carepa, 
+                        El Caraño de Quibdó y Las Brujas de Corozal.</p>
                 </div>
-                
+
                 <div class="tab-pane fade m-5" id="servicios" role="tabpanel" aria-labelledby="servicios-tab">
-                    <div align="center"> <img src="./img/avionSilueta.png" width="50%" height="50%"> </div> 
-                    <p>Brindamos ayuda para esclarecer el problema de los multiples daños y averías que se 
-                       presentan en entorno de los aviones del aeropuerto.</p>
+                    <div align="center"> <img src="./img/Avion pasajeros logo.jpg" width="20%" height="20%"> </div> 
+                    <p>Brindamos ayuda para esclarecer el problema de los múltiples daños y averías que se 
+                        presentan en entorno de los aviones del aeropuerto.</p>
+                </div>
+
+                <div class="tab-pane fade m-5" id="contactenos" role="tabpanel" aria-labelledby="contactenos-tab">
+                    <div align="center"> <img src="./img/Avion pasajeros logo.jpg" width="20%" height="20%"> </div>
+                    <center>
+                        <p>Llámanos de lunes a viernes de 9:00 a 20:00h. Sábados de 9:00 a 14:00h.</p>
+                    </center>
+                    <div align='center'>
+                        <font color="Navy" font="Courier">
+                        <h4 align="center"><i>01-8000-912002. Teléfono 597 83 00, extensiones: 2532 y 2605.</i></h4>
+                        </font>
+                    </div>
+                    <center>
+                        <p>O escríbenos, en cualquier horario. Nos daremos el gusto de comunicarnos con usted.</p>
+                    </center>
+                    <div align='center'>
+                        <font color="Navy" font="Courier">
+                        <h4 align="center"><i>fallastecnicas@AeropuertoJMC.com</i></h4>
+                        </font>
+                    </div>
+
+
                 </div>
             </div>
+
         </div>
     </body>
 </html>
