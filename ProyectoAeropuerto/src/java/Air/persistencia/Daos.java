@@ -9,7 +9,7 @@ package Air.persistencia;
  *
  * @author docenteitm
  */
-import Air.entidades.HabitacionEn;
+
 import Air.entidades.TiposEn;
 import Air.entidades.UsuarioEn;
 
@@ -24,29 +24,6 @@ import java.util.List;
 
 public class Daos {
 
-    public boolean guardarHabitacion(Connection c, HabitacionEn h) {
-        boolean resultado = true;
-        try {
-            String sql = SQLHelper.insertHabitacion();
-            PreparedStatement p = c.prepareStatement(sql);
-            p.setString(1, h.getNumero());
-            p.setString(2, h.getTipo());
-            p.setDouble(3, h.getPrecio());
-            p.setInt(4, h.getCapacidad());
-            p.execute();
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
-            resultado = false;
-        } finally {
-            try {
-                c.close();
-            } catch (Exception clo) {
-            }
-
-        }
-        return resultado;
-    }
 /**
  * Retorna el valor del perfil del usuario ingresado. Si el usuario no existe retornara 0
  * @param con objeto de conexion a la base de datos
