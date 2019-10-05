@@ -41,7 +41,7 @@ public class InicioCtrl extends HttpServlet {
         
         usuarioEn=usuarioNg.buscarUsuario(con.getCon(), usuarioEn);
         
-        if (usuarioEn.getPerfil()!=0){//si existe me conecte ese formulario con el otro el de la pag hotelWeb..
+        if (usuarioEn.getPerfil()!=0){//si existe me conecte ese formulario con el otro
             response.sendRedirect("/ProyectoAeropuerto/Reparaciones.html");
         }
         else{
