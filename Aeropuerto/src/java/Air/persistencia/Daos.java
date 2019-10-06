@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Air.persistencia;
 
-/**
- *
- * @author docenteitm
- */
+package Air.persistencia;
 
 import Air.entidades.TiposEn;
 import Air.entidades.UsuarioEn;
@@ -20,7 +11,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-//un dao por cada tabla
 
 public class Daos {
 

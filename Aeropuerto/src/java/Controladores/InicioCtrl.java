@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Controladores;
 
 import Air.entidades.UsuarioEn;
@@ -16,10 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author salak404
- */
+
 @WebServlet(name = "InicioCtrl", urlPatterns = {"/InicioCtrl"})
 public class InicioCtrl extends HttpServlet {
 
@@ -39,10 +32,12 @@ public class InicioCtrl extends HttpServlet {
         UsuarioEn usuarioEn= new UsuarioEn(request.getParameter("user"), request.getParameter("password"));
         UsuarioNg usuarioNg= new UsuarioNg();
         
-//        usuarioEn=usuarioNg.buscarUsuario(con.getCon(), usuarioEn);
-        if (request.getParameter("btnRegistro")!=null){
+        
+         if (request.getParameter("btnRegistro")!=null){
             response.sendRedirect("/ProyectoAeropuerto/RegistroUsuario.html");
         }
+
+//        usuarioEn=usuarioNg.buscarUsuario(con.getCon(), usuarioEn);      
         if (usuarioEn.getPerfil()!=0){//si existe me conecte ese formulario con el otro
             response.sendRedirect("/ProyectoAeropuerto/Reparaciones.html");
         }
