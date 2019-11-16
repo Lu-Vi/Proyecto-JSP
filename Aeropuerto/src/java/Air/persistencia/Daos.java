@@ -1,15 +1,15 @@
 
 package Air.persistencia;
 
-import Air.entidades.TiposEn;
+import Air.entidades.AvionEn;
+import Air.entidades.FallasTecnicasEn;
+import Air.entidades.PilotoEn;
 import Air.entidades.UsuarioEn;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class Daos {
@@ -45,30 +45,77 @@ public class Daos {
         }
         return usuario;
     }
+    
+    public AvionEn buscarAvion(Connection con, AvionEn matricula){
+        
+        
+        try{
+        
+        PreparedStatement p=con.prepareStatement(SQLHelper.selectAvion());
+        p.setString(1, matricula.toString());
+        
+        ResultSet r= p.executeQuery();//resultado de la consulta que tenemos siempre es una tabla 
+        if (r.next()){
+            matricula.setPerfil(r.getInt(1));//orden de la solumnas donde tenga el set-prima el set
+        }
+        }catch(SQLException ex){
+            ex.printStackTrace();
+        }finally{//lo que quiero que se ejecute con error o sin error
+            try{
+                con.close();
+            }catch(SQLException ex1){
+                ex1.printStackTrace();
+            } 
+        }
+        return matricula;
+    }
+    
+     public PilotoEn buscarPiloto(Connection con, PilotoEn cedula){
+        
+        
+        try{
+        
+        PreparedStatement p=con.prepareStatement(SQLHelper.selectAvion());
+        p.setString(1, cedula.toString());
+        
+        ResultSet r= p.executeQuery();//resultado de la consulta que tenemos siempre es una tabla 
+        if (r.next()){
+            cedula.setPerfil(r.getInt(1));//orden de la solumnas donde tenga el set-prima el set
+        }
+        }catch(SQLException ex){
+            ex.printStackTrace();
+        }finally{//lo que quiero que se ejecute con error o sin error
+            try{
+                con.close();
+            }catch(SQLException ex1){
+                ex1.printStackTrace();
+            } 
+        }
+        return cedula;
+    }
 
-//    
-//     public List<TiposEn>getTipos(Connection con){          
-//            List<TiposEn> result = new ArrayList<TiposEn>();
+//       public FallasTecnicasEn buscarFallasTecnica(Connection con, FallasTecnicasEn cedula){
+//        
+//        
+//        try{
+//        
+//        PreparedStatement p=con.prepareStatement(SQLHelper.selectAvion());
+//        p.setString(1, cedula.toString());
+//        
+//        ResultSet r= p.executeQuery();//resultado de la consulta que tenemos siempre es una tabla 
+//        if (r.next()){
+//            cedula.setPerfil(r.getInt(1));//orden de la solumnas donde tenga el set-prima el set
+//        }
+//        }catch(SQLException ex){
+//            ex.printStackTrace();
+//        }finally{//lo que quiero que se ejecute con error o sin error
 //            try{
-//                PreparedStatement p = con.prepareStatement(SQLHelper.selectTipos());
-//                ResultSet r = p.executeQuery();
-//                    while(r.next()){
-//                        TiposEn c = new TiposEn();
-//                        c.setCodigo(r.getInt(1));
-//                        c.setNombre(r.getString(2));
-//                        result.add(c);
-//                    }
-//                } catch(Exception ex){
-//                    ex.printStackTrace();
-//                }finally{
-//                try{
-//                  con.close();
-//                }catch(Exception clo){}
-//
-//                }
-//            return result;
-//            
-//	}
-//    
+//                con.close();
+//            }catch(SQLException ex1){
+//                ex1.printStackTrace();
+//            } 
+//        }
+//        return cedula;
+//    }
 
 }

@@ -19,6 +19,11 @@ public class ReparacionesCtrl {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+         if (request.getParameter("btnRegresar")!=null){
+            response.sendRedirect("/ProyectoAeropuerto/Reparaciones.html");
+        }
+        
         try (PrintWriter out = response.getWriter()) {
             out.println("<!DOCTYPE html>");
             out.println("<html>");

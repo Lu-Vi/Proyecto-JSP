@@ -8,7 +8,7 @@ public class UsuarioEn {
     private String clave;
     private int perfil;
 
-    //para que busque usuario y clave, si es mayor que 1 o encontro
+    //para que busque usuario y clave, si es mayor que 1 lo encontro
     public UsuarioEn(String usuario, String clave) {
         this.usuario = usuario;
         this.clave = clave;
