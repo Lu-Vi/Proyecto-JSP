@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Regístro JMC</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./bootstrap-4.3.1-dist/css/bootstrap.css">
+    </head>
+    <body>
+        <div class="container">
+            <ul class="nav nav-pills nav-fill bg-primary">
+                <li class="nav-item">
+                    <a style="color: white" class="nav-link" href="#"></a>
+            </ul>
+
+
+            <h1 style="text-align: center">Regístrate</h1>
+
+            <form action="http://localhost:8080/ProyectoAeropuerto/Controladores/RegistroUsuarioCtrl" name="registroForm" method="post">
+                <div style="width: 60%; margin: 0 auto;">
+                    <label>Usuario</label> 
+                    <input class="form-control" id="tipouser" required type="text" maxlength="10" name="usuario"> 
+                    <label>Contraseña</label>
+                    <input class="form-control" id="numclave" required type="text" maxlength="10" name="clave">
+                    <label>Correo electrónico</label>
+                    <input class="form-control" id="correouser" required type="text" maxlength="10" name="correo">
+                    <div align="center"> <img src="./img/Avion pasajeros logo.jpg" width="20%" height="20%"> </div>
+                    <br>
+                    <input class="btn btn-outline-primary" id="guardarRegistro" name="botonGuardar" value="Guardar" type="submit">
+                    <button class="btn btn-outline-success" id="cancelarRegistro" name="botonCancelar" type="submit">Cancelar</button>
+                    <input class="btn btn-outline-secondary" id="limpiarRegistro" value="Limpiar" type="reset">
+
+                </div>
+
+            </form>
+        </div>
+
+        <br><br><br>
+
+    </body>
+</html>
+
